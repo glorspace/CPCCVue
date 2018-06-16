@@ -26,63 +26,17 @@
         <v-app>
             <v-navigation-drawer app dark v-model="drawer">
                 <img class="logo" src="http://www.centerpointesc.com/images/CPCClogo-blue-white.png">
-                <v-list dense>
-                    <v-list-tile to="home">
-                        <v-list-tile-action>
-                            <v-icon>home</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Home</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile to="give">
-                        <v-list-tile-action>
-                            <v-icon>favorite</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Give</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile to="smallgroups">
-                        <v-list-tile-action>
-                            <v-icon>group</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Small Groups</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile to="volunteer">
-                        <v-list-tile-action>
-                            <v-icon>how_to_reg</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Volunteer</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile to="calendar">
-                        <v-list-tile-action>
-                            <v-icon>event</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Calendar</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile to="contact">
-                        <v-list-tile-action>
-                            <v-icon>forum</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>Contact</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-list-tile to="about">
-                        <v-list-tile-action>
-                            <v-icon>info</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            <v-list-tile-title>About</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>
+                <v-list>
+                    <template v-for="item in menuItems">
+                        <v-list-tile :to="item.page">
+                            <v-list-tile-action>
+                                <v-icon>{{item.icon}}</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                                <v-list-tile-title>{{item.label}}</v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                    </template>
                 </v-list>
             </v-navigation-drawer>
             <v-toolbar color="blue" dark app>
@@ -130,7 +84,16 @@
         new Vue({
             el: '#app',
             data: {
-                drawer: true
+                drawer: true,
+                menuItems: [
+                    { page: 'home', icon: 'home', label: 'Home' },
+                    { page: 'give', icon: 'favorite', label: 'Give' },
+                    { page: 'smallgroups', icon: 'group', label: 'Small Groups' },
+                    { page: 'volunteer', icon: 'how_to_reg', label: 'Volunteer' },
+                    { page: 'calendar', icon: 'event', label: 'Calendar' },
+                    { page: 'contact', icon: 'forum', label: 'Contact' },
+                    { page: 'about', icon: 'info', label: 'About' }
+                ]
             },
             router
         })
