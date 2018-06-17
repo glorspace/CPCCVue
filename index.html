@@ -3,7 +3,7 @@
 <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/@icon/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <style>
         .logo {
@@ -14,10 +14,6 @@
 
         [v-cloak] {
             display: none;
-        }
-
-        v-toolbar {
-            font-family:'Courier New', Courier, monospace;
         }
     </style>
 </head>
@@ -43,7 +39,7 @@
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
                 <v-spacer></v-spacer>
                 <v-btn icon href="http://www.facebook.com/centerpointesc" target="_blank">
-                    <v-icon>fa fa-facebook-square</v-icon>
+                    <v-icon size="20px">fab fa-facebook</v-icon>
                 </v-btn>                
             </v-toolbar>
             <v-content>
@@ -51,7 +47,19 @@
                 <router-view></router-view>
             </v-container>
             </v-content>
-            <v-footer dark app></v-footer>
+            <v-footer dark app class="hidden-lg-and-up">
+                <v-layout row justify-center>
+                    <v-title>
+                        Download our mobile app!
+                        <v-btn class="ml-4" icon href="https://itunes.apple.com/us/app/my-church-app/id880244157?mt=8" target="_blank">
+                            <v-icon size="20px">fab fa-app-store</v-icon>                        
+                        </v-btn>
+                        <v-btn icon href="https://play.google.com/store/apps/details?id=com.bibleandjournalapp.mychurchapp" target="_blank">
+                            <v-icon size="20px">fab fa-google-play</v-icon>
+                        </v-btn>
+                    </v-title>
+                </v-layout>
+            </v-footer>
         </v-app>
     </div>
     
@@ -77,14 +85,12 @@
             { path: '/about', component: About }
         ]
 
-        const router = new VueRouter({
-            routes // short for `routes: routes`
-        })
+        const router = new VueRouter({ routes })
 
         new Vue({
             el: '#app',
             data: {
-                drawer: true,
+                drawer: null,
                 menuItems: [
                     { page: 'home', icon: 'home', label: 'Home' },
                     { page: 'give', icon: 'favorite', label: 'Give' },
