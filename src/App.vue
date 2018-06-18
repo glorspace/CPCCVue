@@ -24,9 +24,7 @@
                 </v-btn>                
             </v-toolbar>
             <v-content>
-            <v-container fluid>
                 <router-view></router-view>
-            </v-container>
             </v-content>
             <v-footer dark app class="hidden-lg-and-up">
                 <v-layout row justify-center>
@@ -72,7 +70,6 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
     }
 
     .logo {
