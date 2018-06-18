@@ -5,7 +5,7 @@
                 <img class="logo" src="http://www.centerpointesc.com/images/CPCClogo-blue-white.png">
                 <v-list>
                     <template v-for="item in menuItems">
-                        <v-list-tile :to="item.page">
+                        <v-list-tile :to="item.page" :key="item.page">
                             <v-list-tile-action>
                                 <v-icon>{{item.icon}}</v-icon>
                             </v-list-tile-action>
