@@ -1,108 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <style>
-        .logo {
-            margin: 20px 16px;
-            width: 260px;
-            height: 100px;
-        }
-
-        [v-cloak] {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div id="app" v-cloak>
-        <v-app>
-            <v-navigation-drawer app dark v-model="drawer">
-                <img class="logo" src="http://www.centerpointesc.com/images/CPCClogo-blue-white.png">
-                <v-list>
-                    <template v-for="item in menuItems">
-                        <v-list-tile :to="item.page">
-                            <v-list-tile-action>
-                                <v-icon>{{item.icon}}</v-icon>
-                            </v-list-tile-action>
-                            <v-list-tile-content>
-                                <v-list-tile-title>{{item.label}}</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-                    </template>
-                </v-list>
-            </v-navigation-drawer>
-            <v-toolbar color="blue" dark app>
-                <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-                <v-spacer></v-spacer>
-                <v-btn icon href="http://www.facebook.com/centerpointesc" target="_blank">
-                    <v-icon size="20px">fab fa-facebook</v-icon>
-                </v-btn>                
-            </v-toolbar>
-            <v-content>
-            <v-container fluid>
-                <router-view></router-view>
-            </v-container>
-            </v-content>
-            <v-footer dark app class="hidden-lg-and-up">
-                <v-layout row justify-center>
-                    <v-title>
-                        Download our mobile app!
-                        <v-btn class="ml-4" icon href="https://itunes.apple.com/us/app/my-church-app/id880244157?mt=8" target="_blank">
-                            <v-icon size="20px">fab fa-app-store</v-icon>                        
-                        </v-btn>
-                        <v-btn icon href="https://play.google.com/store/apps/details?id=com.bibleandjournalapp.mychurchapp" target="_blank">
-                            <v-icon size="20px">fab fa-google-play</v-icon>
-                        </v-btn>
-                    </v-title>
-                </v-layout>
-            </v-footer>
-        </v-app>
-    </div>
-    
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-    <script>
-        const Home = { template: '<div>Home</div>' }
-        const Give = { template: '<div>Give</div>' }
-        const SmallGroups = { template: '<div>SmallGroups</div>' }
-        const Volunteer = { template: '<div>Volunteer</div>' }
-        const Calendar = { template: '<div>Calendar</div>' }
-        const Contact = { template: '<div>Contact</div>' }
-        const About = { template: '<div>About</div>' }
-
-        const routes = [
-            { path: '/home', component: Home },
-            { path: '/give', component: Give },
-            { path: '/smallgroups', component: SmallGroups },
-            { path: '/volunteer', component: Volunteer },
-            { path: '/calendar', component: Calendar },
-            { path: '/contact', component: Contact },
-            { path: '/about', component: About }
-        ]
-
-        const router = new VueRouter({ routes })
-
-        new Vue({
-            el: '#app',
-            data: {
-                drawer: null,
-                menuItems: [
-                    { page: 'home', icon: 'home', label: 'Home' },
-                    { page: 'give', icon: 'favorite', label: 'Give' },
-                    { page: 'smallgroups', icon: 'group', label: 'Small Groups' },
-                    { page: 'volunteer', icon: 'how_to_reg', label: 'Volunteer' },
-                    { page: 'calendar', icon: 'event', label: 'Calendar' },
-                    { page: 'contact', icon: 'forum', label: 'Contact' },
-                    { page: 'about', icon: 'info', label: 'About' }
-                ]
-            },
-            router
-        })
-    </script>
-</body>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Center Pointe Community Church</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
