@@ -51,11 +51,11 @@
                 drawer: null,
                 menuItems: [
                     { page: 'home', icon: 'home', label: 'Home' },
-                    { page: 'give', icon: 'favorite', label: 'Give' },
+                    { page: 'contact', icon: 'forum', label: 'Connect' },
                     { page: 'smallgroups', icon: 'group', label: 'Small Groups' },
-                    { page: 'volunteer', icon: 'how_to_reg', label: 'Volunteer' },
+                    { page: 'volunteer', icon: 'how_to_reg', label: 'Sign Up' },
                     { page: 'calendar', icon: 'event', label: 'Calendar' },
-                    { page: 'contact', icon: 'forum', label: 'Contact' },
+                    { page: 'give', icon: 'favorite', label: 'Give' },
                     { page: 'about', icon: 'info', label: 'About' }
                 ]
             }

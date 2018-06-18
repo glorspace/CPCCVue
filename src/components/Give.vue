@@ -1,5 +1,9 @@
 <template>
-    <span>Give</span>
+<div>
+    <iframe src="https://centerpointesc.breezechms.com/give/online"
+        scrolling="no">
+    </iframe>
+</div>
 </template>
 
 <script>
@@ -15,6 +19,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    iframe {
+        padding: 10px;
+        width: 100%;
+        max-width: 776px;
+        height: 1000px;
+        border: none;
+    }
     h1, h2 {
         font-weight: normal;
     }
